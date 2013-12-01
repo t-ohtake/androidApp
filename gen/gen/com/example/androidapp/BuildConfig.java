@@ -1,5 +1,5 @@
 /** Automatically generated file. DO NOT MODIFY */
-package org.jpn.techbooster.sample.OauthSample;
+package gen.com.example.androidapp;
 
 public final class BuildConfig {
     public final static boolean DEBUG = true;

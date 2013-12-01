@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, OauthSample!</string>
-    <string name="app_name">OauthSample</string>
+
+    <string name="app_name">androidApp</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">よう！</string>
+    <string name="twitter_oauth">Twitter認証</string>
+
 </resources>
