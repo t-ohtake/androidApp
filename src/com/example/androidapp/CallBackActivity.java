@@ -1,7 +1,5 @@
 package com.example.androidapp;
 
-
-import gen.com.example.androidapp.R;
 import android.app.Activity;
 import android.os.Bundle;
 

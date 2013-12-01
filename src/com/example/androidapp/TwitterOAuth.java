@@ -1,6 +1,5 @@
 package com.example.androidapp;
 
-import gen.com.example.androidapp.R;
 import twitter4j.TwitterException;
 import twitter4j.auth.OAuthAuthorization;
 import twitter4j.auth.RequestToken;
@@ -26,7 +25,7 @@ public class TwitterOAuth extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		 
-		Button btn = (Button)findViewById(R.id.twitter_oauth);
+		Button btn = (Button)findViewById(R.id.button1);
 		btn.setOnClickListener(new OnClickListener()
 		{
 			@Override
