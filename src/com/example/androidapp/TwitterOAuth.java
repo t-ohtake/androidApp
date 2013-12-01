@@ -54,6 +54,8 @@ public class TwitterOauth extends Activity
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
+		
+		//collbackのURL取得
 		String _uri;
 		_uri = _req.getAuthorizationURL();
 		startActivityForResult(new Intent(Intent.ACTION_VIEW , Uri.parse(_uri)), 0);
