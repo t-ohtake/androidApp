@@ -3,10 +3,11 @@
       package="gen.com.example.androidapp"
       android:versionCode="1"
       android:versionName="1.0">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+      
+<!-- インターネット接続用 -->
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
-
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+    <application android:icon="@drawable/tablebackbuttom" android:label="@string/app_name">
         <activity android:name=".androidApp"
                   android:label="@string/app_name">
             <intent-filter>

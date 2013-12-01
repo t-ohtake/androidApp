@@ -5,6 +5,7 @@ import gen.com.example.androidapp.R;
 import android.app.Activity;
 import android.os.Bundle;
 
+//コールバック専用クラス
 public class CallBackActivity extends Activity
 {
 	@Override
