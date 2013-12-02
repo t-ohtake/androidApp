@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, TwitterView!</string>
-    <string name="app_name">TwitterView</string>
+    <string name="hello">Hello World, s2softAndroidApp</string>
+    <string name="app_name">s2softAndroidApp</string>
+    <string name="label_input_pin_code">PINコード</string>
+    <string name="et_hint_input_pin">PINコードを入力して下さい</string>
+    <string name="btn_auth">PINコードを入力</string>
 </resources>
