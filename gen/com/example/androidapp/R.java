@@ -18,7 +18,7 @@ public final class R {
         public static final int tablebackbuttom=0x7f020004;
     }
     public static final class id {
-        public static final int button1=0x7f050001;
+        public static final int attestation=0x7f050001;
         public static final int textView1=0x7f050000;
     }
     public static final class layout {

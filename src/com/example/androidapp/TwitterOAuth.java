@@ -15,14 +15,18 @@ import android.widget.Button;
 
 public class TwitterOauth extends Activity
 {
-
+	//アプリの認証オブジェクト作成
+	RequestToken _req = null;
+	//Oauth認証オブジェクト作成
+	OAuthAuthorization _oauth = null;
+	
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-
-        Button btn = (Button)findViewById(R.id.button1);
+        setContentView(R.layout.main);//レイアウト指定
+        Button btn = (Button)findViewById(R.id.attestation);//認証ボタン
+        
         btn.setOnClickListener(new OnClickListener()
         {
 			@Override
@@ -37,20 +41,18 @@ public class TwitterOauth extends Activity
     {
     	//Twitetr4jの設定を読み込む
     	Configuration conf = ConfigurationContext.getInstance();
+    	_oauth = new OAuthAuthorization(conf);
 
 		//認証キー取得
 		TwitterKeys key 		= new TwitterKeys();
 		String consumerkey 		= key.getConsumerkey();
 		String consumersecret 	= key.getConsumersecret();
-		
-    	//Oauth認証オブジェクト作成
-		OAuthAuthorization oauth = new OAuthAuthorization(conf);
+
 		//Oauth認証オブジェクトにconsumerKeyとconsumerSecretを設定
-		oauth.setOAuthConsumer(consumerkey, consumersecret);
-		//アプリの認証オブジェクト作成
-		RequestToken _req = null;
+		_oauth.setOAuthConsumer(consumerkey, consumersecret);
+
 		try {
-			_req = oauth.getOAuthRequestToken("Callback://CallBackActivity");
+			_req = _oauth.getOAuthRequestToken("Callback://CallBackActivity");
 		} catch (TwitterException e) {
 			e.printStackTrace();
 		}
