@@ -29,6 +29,7 @@ public class TwitterOauth extends Activity
         setContentView(R.layout.main);//レイアウト指定
         Button btn = (Button)findViewById(R.id.attestation);//認証ボタン
         
+        //認証ボタン押下時の動作
         btn.setOnClickListener(new OnClickListener()
         {
 			@Override
@@ -57,7 +58,7 @@ public class TwitterOauth extends Activity
 		try
 		{
 			//コールバックURLを指定
-			_req = _oauth.getOAuthRequestToken("androidapp://main");
+			_req = _oauth.getOAuthRequestToken("com.example.androidapp://TwitterOauth");
 		}
 		catch (TwitterException e)
 		{
