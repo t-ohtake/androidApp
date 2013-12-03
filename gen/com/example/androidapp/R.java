@@ -16,23 +16,27 @@ public final class R {
         public static final int icon=0x7f020002;
         public static final int tableback=0x7f020003;
         public static final int tablebackbuttom=0x7f020004;
+        public static final int tw=0x7f020005;
     }
     public static final class id {
-        public static final int attestation=0x7f050003;
-        public static final int btn_auth_pin=0x7f050001;
-        public static final int et_input_pin=0x7f050000;
-        public static final int textView1=0x7f050002;
+        public static final int TwitterMain=0x7f050000;
+        public static final int attestation=0x7f050001;
     }
     public static final class layout {
-        public static final int auth_twitter_activity_type=0x7f030000;
-        public static final int callback=0x7f030001;
-        public static final int main=0x7f030002;
+        public static final int callback=0x7f030000;
+        public static final int main=0x7f030001;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int btn_auth=0x7f040004;
-        public static final int et_hint_input_pin=0x7f040003;
-        public static final int hello=0x7f040000;
-        public static final int label_input_pin_code=0x7f040002;
+        /**  認証画面 
+         */
+        public static final int Attestation=0x7f040001;
+        public static final int AttestationBtn=0x7f040002;
+        /**  共通 
+         */
+        public static final int app_name=0x7f040000;
+        public static final int onAttestation=0x7f040004;
+        /**  認証後画面 
+         */
+        public static final int titleAfterAttestation=0x7f040003;
     }
 }

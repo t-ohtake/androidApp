@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="hello">Hello World, s2softAndroidApp</string>
+    <!-- 共通 -->
     <string name="app_name">s2softAndroidApp</string>
-    <string name="label_input_pin_code">PINコード</string>
-    <string name="et_hint_input_pin">PINコードを入力して下さい</string>
-    <string name="btn_auth">PINコードを入力</string>
+    <!-- 認証画面 -->
+	<string name="Attestation">Twitter</string>
+	<string name="AttestationBtn">認証</string>
+	<!-- 認証後画面 -->
+    <string name="titleAfterAttestation">Twitter　メインメニュー</string>
+    <string name="onAttestation">正常に認証が完了しました</string>
 </resources>

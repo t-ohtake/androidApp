@@ -6,26 +6,22 @@
 <uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
 
-    <application android:icon="@drawable/icon" android:label="@string/app_name" android:debuggable="true">
+    <application android:icon="@drawable/tw" android:label="@string/app_name" android:debuggable="true">
         <!-- 初期呼出し -->
-        <activity android:name=".TwitterOauth" android:label="@string/app_name">
+        <activity android:name=".TwitterOauth" android:label="@string/Attestation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-                <data android:scheme="com.example.androidapp" android:host="TwitterOauth"/>
             </intent-filter>
         </activity>
-        
-
-        <!-- 
-        <activity android:name="CallBackActivity" android:label="@string/app_name">
+        <!--　CallBack後呼出し -->
+        <activity android:name=".CallBackActivity" android:label="@string/titleAfterAttestation">
             <intent-filter>
 				<action android:name="android.intent.action.VIEW" />
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
-				<data android:scheme="Callback" />
+				<data android:scheme="com.example.androidapp" android:host="TwitterOauth"/>
 			</intent-filter>
         </activity>
-		 -->
     </application>
 </manifest>
