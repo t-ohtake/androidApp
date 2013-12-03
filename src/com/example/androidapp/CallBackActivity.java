@@ -1,47 +1,52 @@
 package com.example.androidapp;
 
-
 import twitter4j.TwitterException;
 import twitter4j.auth.AccessToken;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
 
-//コールバック専用クラス
+
+//コールバック専用画面
+@SuppressLint("ShowToast")
 public class CallBackActivity extends Activity
-{
+{	
+	//トークン変数
+	private static String _accessToken = null;
+	private static String _accessTokenSecret = null;
+	
 	@Override
     protected void onCreate(Bundle savedInstanceState)
 	{
+		
         super.onCreate(savedInstanceState);
         setContentView(R.layout.callback);
- /*
+        
         AccessToken token = null;
- 
-        //Twitterの認証画面から発行されるIntentからUriを取得
+        
+        //oauth_verifierを取得する
         Uri uri = getIntent().getData();
-        //Uri uri = getIntent().getData();
- 
-        if(uri != null && uri.toString().startsWith("Callback://CallBackActivity"))
+        String verifier = uri.getQueryParameter("oauth_verifier");
+        
+        try
         {
-            //oauth_verifierを取得する
-            String verifier = uri.getQueryParameter("oauth_verifier");
-            try
-            {
-                //AccessTokenオブジェクトを取得
-                token = TwitterOauth._oauth.getOAuthAccessToken(TwitterOauth._req, verifier);
-            }
-            catch (TwitterException e)
-            {
-                e.printStackTrace();
-            }
+        	//AccessToken取得
+        	token = TwitterOauth._oauth.getOAuthAccessToken(TwitterOauth._req, verifier);
+            _accessToken = token.getToken();
+            _accessTokenSecret = token.getTokenSecret();
         }
-
-        TextView tv = (TextView)findViewById(R.id.textView1);//取得したトークン表示（テスト用なのであとで消しちゃう）
-        CharSequence cs = "token：" + token.getToken() + "\r\n" + "token secret：" + token.getTokenSecret();
-        tv.setText(cs);
-        */
+        catch(TwitterException e)
+        {
+        	e.printStackTrace();
+        }
+        
+        
+        //画面遷移実行
+        Intent intent = new Intent(CallBackActivity.this, TweetActivity.class);
+        intent.putExtra( "accessToken", _accessToken );
+        intent.putExtra( "accessTokenSecret", _accessTokenSecret );
+        startActivity(intent);
     }
-
 }

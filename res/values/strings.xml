@@ -6,6 +6,9 @@
 	<string name="Attestation">Twitter</string>
 	<string name="AttestationBtn">認証</string>
 	<!-- 認証後画面 -->
-    <string name="titleAfterAttestation">Twitter　メインメニュー</string>
-    <string name="onAttestation">正常に認証が完了しました</string>
+	<string name="titleAfterAttestation">Twitter</string>
+	<string name="attestationSuccess">正常に認証が完了しました。</string>
+	<!-- つぶやき画面 -->
+    <string name="titleTweet">Twitter</string>
+    <string name="tweetBtn">つぶやく</string>
 </resources>

@@ -1,8 +1,5 @@
 package com.example.androidapp;
 
-import oauth.signpost.commonshttp.CommonsHttpOAuthConsumer;
-import oauth.signpost.commonshttp.CommonsHttpOAuthProvider;
-import oauth.signpost.OAuthProvider;
 import twitter4j.TwitterException;
 import twitter4j.auth.OAuthAuthorization;
 import twitter4j.auth.RequestToken;
@@ -47,13 +44,9 @@ public class TwitterOauth extends Activity
     	Configuration conf = ConfigurationContext.getInstance();
     	_oauth = new OAuthAuthorization(conf);
 
-		//認証キー取得
-		TwitterKeys key 		= new TwitterKeys();
-		String consumerkey 		= key.getConsumerkey();
-		String consumersecret 	= key.getConsumersecret();
-
-		//Oauth認証オブジェクトにconsumerKeyとconsumerSecretを設定
-		_oauth.setOAuthConsumer(consumerkey, consumersecret);
+    	//Oauth認証オブジェクトにconsumerKeyとconsumerSecretを設定
+		TwitterKeys key 		= new TwitterKeys();	
+		_oauth.setOAuthConsumer(key.getConsumerkey(), key.getConsumersecret());
 
 		try
 		{
@@ -75,42 +68,4 @@ public class TwitterOauth extends Activity
 		Intent intent = new Intent(TwitterOauth.this, CallBackActivity.class);
         startActivity(intent);
     }
-    
-/*いらん
-    //web画面遷移時に実行
-    @Override
-    protected void onResume()
-    {
-        super.onResume();
-     
-        if (_req != null) {
-            //認証処理に入っている場合はレイアウトを変更
-            setContentView(R.layout.auth_twitter_activity_type);
-            //Button authBtn = (Button) findViewById(R.id.btn_auth_pin);
-            //authBtn.setOnClickListener(this);
-        }
-    }
-*/ 
-    
-//TEST====未使用=========================================
-    
-	//おためし
-	private OAuthProvider provider;
-	private CommonsHttpOAuthConsumer consumer;
-	
-    //おためし
-	private void askOAuth()
-	{
-		
-		
-			TwitterKeys key 		= new TwitterKeys();
-			String consumerkey 		= key.getConsumerkey();
-			String consumersecret 	= key.getConsumersecret();
-
-			
-			consumer = new CommonsHttpOAuthConsumer(consumerkey, consumersecret);
-			provider = new CommonsHttpOAuthProvider("http://twitter.com/oauth/request_token","http://twitter.com/oauth/access_token","http://twitter.com/oauth/authorize");
-			provider.setOAuth10a(true);
-		
-	}
 }

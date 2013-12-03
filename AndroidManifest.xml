@@ -3,8 +3,8 @@
       package="com.example.androidapp"
       android:versionCode="1"
       android:versionName="1.0">
-<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-
+    <!-- アプリケーション内でブラウザを使用するための指定 -->
+	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
 
     <application android:icon="@drawable/tw" android:label="@string/app_name" android:debuggable="true">
         <!-- 初期呼出し -->
@@ -14,6 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <!--　CallBack後呼出し -->
         <activity android:name=".CallBackActivity" android:label="@string/titleAfterAttestation">
             <intent-filter>
@@ -23,5 +24,10 @@
 				<data android:scheme="com.example.androidapp" android:host="TwitterOauth"/>
 			</intent-filter>
         </activity>
+        
+        <!--　つぶやくボタン -->
+        <activity android:name=".TweetActivity" android:label="@string/titleTweet">
+		</activity>
+		
     </application>
 </manifest>
