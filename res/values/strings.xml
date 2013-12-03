@@ -10,5 +10,6 @@
 	<string name="attestationSuccess">正常に認証が完了しました。</string>
 	<!-- つぶやき画面 -->
     <string name="titleTweet">Twitter</string>
-    <string name="tweetBtn">つぶやく</string>
+    <string name="tweethint">Tweetを入力して下さい</string>
+    <string name="tweetBtn">Tweet</string>
 </resources>

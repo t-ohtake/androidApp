@@ -50,7 +50,6 @@ public class TweetActivity extends Activity
 		        tweetProcess();
 			}
 		});
-
     }
 	
 	//つぶやき処理
@@ -87,7 +86,7 @@ public class TweetActivity extends Activity
 		    else
 		    {
 			    //画面に値をセット
-			    textview.setText("つぶやきが入力されていません");//メッセージ
+			    textview.setText("Tweetが入力されていません");//メッセージ
 		    }		    	
 		}
 		catch (TwitterException e)
@@ -95,11 +94,14 @@ public class TweetActivity extends Activity
 			String LOG_TAG = "ERROR:";
 		    e.printStackTrace();
 		    
-		    Log.i(LOG_TAG, "on Start", new Throwable());
+		    Log.i(LOG_TAG, "つぶやき失敗", e);
 		    if(e.isCausedByNetworkIssue())
 		    {
 		         Toast.makeText(this, "ネットーワークの問題です", Toast.LENGTH_LONG);
 		    }
+		    
+		  //画面に値をセット
+		    textview.setText("つぶやけませんでした(過去のTweetと同一内容、ネットワーク接続不備等が考えられます)");//メッセージ
 		}
 	}
 

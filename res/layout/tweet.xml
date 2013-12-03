@@ -14,15 +14,16 @@
         android:id="@+id/tweetText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10" >
-
-        <requestFocus />
-    </EditText>
+        android:ems="10"
+        android:height="250.0px"
+        android:hint="@string/tweethint"
+        android:width="200.0px" />
 
     <Button
         android:id="@+id/tweetBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/tweetBtn"/>
+        android:background="@drawable/image_stateful"
+        android:text="@string/tweetBtn" />
 
 </LinearLayout>
