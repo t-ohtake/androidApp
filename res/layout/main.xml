@@ -6,8 +6,9 @@
 
     <Button
         android:id="@+id/attestation"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_width="250.0px"        
         android:text="@string/AttestationBtn"
         android:background="@drawable/image_stateful" />
 
