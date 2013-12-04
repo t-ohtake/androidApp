@@ -25,8 +25,8 @@ import android.widget.Toast;
 public class TweetActivity extends Activity
 {
 	//トークン変数
-	private static String _accessToken = null;
-	private static String _accessTokenSecret = null;
+	private String _accessToken 		= null;
+	private String _accessTokenSecret 	= null;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState)
@@ -55,7 +55,7 @@ public class TweetActivity extends Activity
 	//つぶやき処理
 	public void tweetProcess()
 	{
-		//Consumer keyとConsumer key seacretの設定
+		//Consumer-keyとConsumer-key-secretの設定
 		TwitterKeys key 		= new TwitterKeys();
 		Twitter tw = new TwitterFactory().getInstance();
 		tw.setOAuthConsumer(key.getConsumerkey(), key.getConsumersecret());
