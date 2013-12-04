@@ -9,7 +9,11 @@ import android.net.Uri;
 import android.os.Bundle;
 
 
-//コールバック専用画面
+/**
+ * コールバック専用画面
+ * @author t-ohtake
+ *
+ */
 @SuppressLint("ShowToast")
 public class CallBackActivity extends Activity
 {	
@@ -40,8 +44,7 @@ public class CallBackActivity extends Activity
         catch(TwitterException e)
         {
         	e.printStackTrace();
-        }
-        
+        } 
         
         //画面遷移実行
         Intent intent = new Intent(CallBackActivity.this, TweetActivity.class);

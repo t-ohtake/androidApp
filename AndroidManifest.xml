@@ -25,8 +25,12 @@
 			</intent-filter>
         </activity>
         
-        <!--　つぶやくボタン -->
+        <!--　つぶやき画面 -->
         <activity android:name=".TweetActivity" android:label="@string/titleTweet">
+		</activity>
+		
+        <!--　タイムライン画面 -->
+        <activity android:name=".TimeLineActivity" android:label="@string/titleTimeline">
 		</activity>
 		
     </application>

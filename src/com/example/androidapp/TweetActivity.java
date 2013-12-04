@@ -7,7 +7,6 @@ import twitter4j.auth.AccessToken;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
 import android.util.Log;
@@ -20,10 +19,16 @@ import android.widget.Toast;
 
 
 
-//コールバックされた後、アクセストークンを取得する
+/**
+ * つぶやき処理を行うクラス
+ * @author t-ohtake
+ *
+ */
 @SuppressLint("ShowToast")
 public class TweetActivity extends Activity
 {
+	//インテント変数
+	private Intent intent = getIntent();
 	//トークン変数
 	private String _accessToken 		= null;
 	private String _accessTokenSecret 	= null;
@@ -35,13 +40,13 @@ public class TweetActivity extends Activity
         setContentView(R.layout.tweet);
         
         //前Activityからトークン取得
-        Intent intent 			= getIntent();
+        this.intent 			= getIntent();
         this._accessToken 		= intent.getStringExtra( "accessToken" );
         this._accessTokenSecret = intent.getStringExtra( "accessTokenSecret" );
         
-        //つぶやくボタン押下時の動作
-        Button btn = (Button)findViewById(R.id.tweetBtn);
-        btn.setOnClickListener(new OnClickListener()
+        //【つぶやくボタン押下時の動作】
+        Button tweetBtn = (Button)findViewById(R.id.tweetBtn);
+        tweetBtn.setOnClickListener(new OnClickListener()
         {
 			@Override
 			public void onClick(View v)
@@ -50,9 +55,25 @@ public class TweetActivity extends Activity
 		        tweetProcess();
 			}
 		});
+        
+        //【つぶやくボタン押下時の動作】
+        Button moveTimelineBtn = (Button)findViewById(R.id.moveTimelineBtn);
+        moveTimelineBtn.setOnClickListener(new OnClickListener()
+        {
+			@Override
+			public void onClick(View v)
+			{
+				//TimeLineActivityへ遷移メソッド呼出し
+				moveTimeline();
+			}
+		});
     }
 	
-	//つぶやき処理
+	/**
+	 * ===========================================
+	 * つぶやき処理
+	 * ===========================================
+	 */
 	public void tweetProcess()
 	{
 		//Consumer-keyとConsumer-key-secretの設定
@@ -101,8 +122,23 @@ public class TweetActivity extends Activity
 		    }
 		    
 		  //画面に値をセット
-		    textview.setText("つぶやけませんでした(過去のTweetと同一内容、ネットワーク接続不備等が考えられます)");//メッセージ
+		    textview.setText("つぶやけませんでした(過去のTweetと同一内容、ネットワーク接続不可等が考えられます)");//メッセージ
 		}
+	}
+	
+	
+	/**
+	 *===========================================
+	 * TimeLineActivityへ遷移処理
+	 * ===========================================
+	 */
+	public void moveTimeline()
+	{
+        //TimeLineActivityへ遷移
+		Intent intent = new Intent(TweetActivity.this, TimeLineActivity.class);
+        intent.putExtra( "accessToken", _accessToken );
+        intent.putExtra( "accessTokenSecret", _accessTokenSecret );
+        startActivity(intent);
 	}
 
 }
