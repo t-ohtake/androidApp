@@ -6,6 +6,7 @@ import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.SpannableStringBuilder;
@@ -38,11 +39,11 @@ public class TweetActivity extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.tweet);
-        
-        //前Activityからトークン取得
-        this.intent 			= getIntent();
-        this._accessToken 		= intent.getStringExtra( "accessToken" );
-        this._accessTokenSecret = intent.getStringExtra( "accessTokenSecret" );
+
+        //プリファレンスからトークンを取得
+        PreferencesUtil pref 	= new PreferencesUtil(this.getSharedPreferences("private_data", Context.MODE_PRIVATE));
+        this._accessToken 		= pref.getString("accessToken", "");
+        this._accessTokenSecret = pref.getString("accessTokenSecret", "");
         
         //【つぶやくボタン押下時の動作】
         Button tweetBtn = (Button)findViewById(R.id.tweetBtn);
@@ -136,8 +137,6 @@ public class TweetActivity extends Activity
 	{
         //TimeLineActivityへ遷移
 		Intent intent = new Intent(TweetActivity.this, TimeLineActivity.class);
-        intent.putExtra( "accessToken", _accessToken );
-        intent.putExtra( "accessTokenSecret", _accessTokenSecret );
         startActivity(intent);
 	}
 

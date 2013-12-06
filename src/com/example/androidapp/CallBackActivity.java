@@ -48,17 +48,14 @@ public class CallBackActivity extends Activity
         {
         	e.printStackTrace();
         } 
-        //TODO:プリファレンス導入中
+        
         //プリファレンスへアクセストークンを格納
-        SharedPreferences pref 	= this.getSharedPreferences("private_data", Context.MODE_PRIVATE);
-        Editor editor 			= pref.edit();
-        editor.putString("accessToken", _accessToken);
-        editor.putString("accessTokenSecret", _accessTokenSecret);
+        PreferencesUtil pref 	= new PreferencesUtil(this.getSharedPreferences("private_data", Context.MODE_PRIVATE));
+        pref.putString("accessToken", 		_accessToken);
+        pref.putString("accessTokenSecret", _accessTokenSecret);
         
         //画面遷移実行
         Intent intent = new Intent(CallBackActivity.this, TweetActivity.class);
-        intent.putExtra( "accessToken", _accessToken );
-        intent.putExtra( "accessTokenSecret", _accessTokenSecret );
         startActivity(intent);
     }
 }

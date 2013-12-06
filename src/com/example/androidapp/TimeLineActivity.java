@@ -8,6 +8,7 @@ import twitter4j.TwitterFactory;
 import twitter4j.auth.AccessToken;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -24,8 +25,6 @@ import android.widget.Toast;
 @SuppressLint("ShowToast")
 public class TimeLineActivity extends Activity
 {
-	//インテント変数
-	private Intent intent = getIntent();
 	//トークン変数
 	private String _accessToken 		= null;
 	private String _accessTokenSecret 	= null;
@@ -36,10 +35,10 @@ public class TimeLineActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.timeline);
         
-        //前Activityからトークン取得
-        this.intent 			= getIntent();
-        this._accessToken 		= intent.getStringExtra( "accessToken" );
-        this._accessTokenSecret = intent.getStringExtra( "accessTokenSecret" );
+        //プリファレンスからトークンを取得
+        PreferencesUtil pref 	= new PreferencesUtil(this.getSharedPreferences("private_data", Context.MODE_PRIVATE));
+        this._accessToken 		= pref.getString("accessToken", "");
+        this._accessTokenSecret = pref.getString("accessTokenSecret", "");
         
 		//Consumer-keyとConsumer-key-secretの設定
 		TwitterKeys key 		= new TwitterKeys();
@@ -54,6 +53,7 @@ public class TimeLineActivity extends Activity
 		{
 			//タイムラインの取得
 			ResponseList<Status> homeTl = tw.getHomeTimeline();
+			System.out.println();
 		}
 		catch (TwitterException e)
 		{
@@ -66,7 +66,6 @@ public class TimeLineActivity extends Activity
 		         Toast.makeText(this, "ネットーワークの問題です", Toast.LENGTH_LONG);
 		    }
 		}
-
     }
     
 	/**

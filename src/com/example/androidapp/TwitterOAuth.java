@@ -13,6 +13,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
+/**
+ *　Oauth認証でアプリ連携を行うアプリ
+ * @author t-ohtake
+ *
+ */
 public class TwitterOauth extends Activity
 {
 	//アプリの認証オブジェクト、Oauth認証オブジェクト作成
@@ -37,7 +42,9 @@ public class TwitterOauth extends Activity
 		});
     }
     
-    //ボタン押下時に呼出し
+    /**
+     * ボタン押下時に呼出し
+     */
     private void executeOauth()
     {
     	//Twitetr4jの設定を読み込む
