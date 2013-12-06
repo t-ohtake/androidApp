@@ -1,5 +1,7 @@
 package com.example.androidapp;
 
+import twitter4j.ResponseList;
+import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.TwitterFactory;
@@ -8,14 +10,9 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.SpannableStringBuilder;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
 
 
 
@@ -52,8 +49,23 @@ public class TimeLineActivity extends Activity
 		//AccessTokenオブジェクトの設定
 		AccessToken at = new AccessToken(_accessToken, _accessTokenSecret);
 		tw.setOAuthAccessToken(at);
-        
-
+		
+		try
+		{
+			//タイムラインの取得
+			ResponseList<Status> homeTl = tw.getHomeTimeline();
+		}
+		catch (TwitterException e)
+		{
+			String LOG_TAG = "ERROR:";
+		    e.printStackTrace();
+		    
+		    Log.i(LOG_TAG, "タイムライン取得失敗", e);
+		    if(e.isCausedByNetworkIssue())
+		    {
+		         Toast.makeText(this, "ネットーワークの問題です", Toast.LENGTH_LONG);
+		    }
+		}
 
     }
     
