@@ -4,7 +4,10 @@ import twitter4j.TwitterException;
 import twitter4j.auth.AccessToken;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -14,7 +17,7 @@ import android.os.Bundle;
  * @author t-ohtake
  *
  */
-@SuppressLint("ShowToast")
+@SuppressLint({ "ShowToast", "CommitPrefEdits" })
 public class CallBackActivity extends Activity
 {	
 	//トークン変数
@@ -45,6 +48,12 @@ public class CallBackActivity extends Activity
         {
         	e.printStackTrace();
         } 
+        //TODO:プリファレンス導入中
+        //プリファレンスへアクセストークンを格納
+        SharedPreferences pref 	= this.getSharedPreferences("private_data", Context.MODE_PRIVATE);
+        Editor editor 			= pref.edit();
+        editor.putString("accessToken", _accessToken);
+        editor.putString("accessTokenSecret", _accessTokenSecret);
         
         //画面遷移実行
         Intent intent = new Intent(CallBackActivity.this, TweetActivity.class);
