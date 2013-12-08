@@ -51,6 +51,19 @@ public class TimeLineActivity extends Activity
 		//タイムライン取得処理
 		getTimeLine();
 		
+		
+        //【更新押下時の動作】
+        Button updateBtn = (Button)findViewById(R.id.updateBtn);
+        updateBtn.setOnClickListener(new OnClickListener()
+        {
+			@Override
+			public void onClick(View v)
+			{
+				//TweetActivetyへの遷移メソッド呼出し
+				updateTimeLine();
+			}
+		});
+        
         //【つぶやくボタン押下時の動作】
         Button moveTweetBtn = (Button)findViewById(R.id.moveTweetBtn);
         moveTweetBtn.setOnClickListener(new OnClickListener()
@@ -126,4 +139,15 @@ public class TimeLineActivity extends Activity
         startActivity(intent);
 	}
 
+	/**
+	 *===========================================
+	 * 画面更新
+	 * ===========================================
+	 */
+	public void updateTimeLine()
+	{
+        //TimeLineActivityへ遷移
+		Intent intent = new Intent(TimeLineActivity.this, TimeLineActivity.class);
+        startActivity(intent);
+	}
 }

@@ -22,13 +22,14 @@ public final class R {
     }
     public static final class id {
         public static final int TimelineListView=0x7f050002;
-        public static final int addTweetMsg=0x7f050004;
+        public static final int addTweetMsg=0x7f050005;
         public static final int attestation=0x7f050001;
-        public static final int moveTimelineBtn=0x7f050007;
-        public static final int moveTweetBtn=0x7f050003;
+        public static final int moveTimelineBtn=0x7f050008;
+        public static final int moveTweetBtn=0x7f050004;
         public static final int textView1=0x7f050000;
-        public static final int tweetBtn=0x7f050006;
-        public static final int tweetText=0x7f050005;
+        public static final int tweetBtn=0x7f050007;
+        public static final int tweetText=0x7f050006;
+        public static final int updateBtn=0x7f050003;
     }
     public static final class layout {
         public static final int callback=0x7f030000;
@@ -46,7 +47,7 @@ public final class R {
         public static final int app_name=0x7f040000;
         public static final int attestationSuccess=0x7f040004;
         public static final int moveTimelineBtn=0x7f040008;
-        public static final int moveTweetBtn=0x7f04000a;
+        public static final int moveTweetBtn=0x7f04000b;
         /**  認証後画面 
          */
         public static final int titleAfterAttestation=0x7f040003;
@@ -58,5 +59,6 @@ public final class R {
         public static final int titleTweet=0x7f040005;
         public static final int tweetBtn=0x7f040007;
         public static final int tweethint=0x7f040006;
+        public static final int updateTimeLineBtn=0x7f04000a;
     }
 }
