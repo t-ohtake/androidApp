@@ -64,16 +64,14 @@ public class TweetActivity extends Activity
 			@Override
 			public void onClick(View v)
 			{
-				//TimeLineActivityへ遷移メソッド呼出し
+				//TimeLineActivityへの遷移メソッド呼出し
 				moveTimeline();
 			}
 		});
     }
 	
 	/**
-	 * ===========================================
 	 * つぶやき処理
-	 * ===========================================
 	 */
 	public void tweetProcess()
 	{
@@ -101,9 +99,8 @@ public class TweetActivity extends Activity
 				//つぶやき実行(つぶやきテキストの文字)
 			    tw.updateStatus(tweetStr);
 			    
-			    //画面に値をセット
-			    edittext.setText("");//つぶやきテキストビュー
-			    textview.setText("\"" + tweetStr + "\"" + "をつぶやきました");//メッセージ
+			    //TimeLineActivityへ遷移処理
+			    moveTimeline();
 		    }
 		    else
 		    {
@@ -129,9 +126,7 @@ public class TweetActivity extends Activity
 	
 	
 	/**
-	 *===========================================
 	 * TimeLineActivityへ遷移処理
-	 * ===========================================
 	 */
 	public void moveTimeline()
 	{

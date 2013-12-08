@@ -55,7 +55,7 @@ public class CallBackActivity extends Activity
         pref.putString("accessTokenSecret", _accessTokenSecret);
         
         //画面遷移実行
-        Intent intent = new Intent(CallBackActivity.this, TweetActivity.class);
+        Intent intent = new Intent(CallBackActivity.this, TimeLineActivity.class);
         startActivity(intent);
     }
 }

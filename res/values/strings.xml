@@ -9,11 +9,12 @@
 	<string name="titleAfterAttestation">Twitter</string>
 	<string name="attestationSuccess">正常に認証が完了しました。</string>
 	<!-- つぶやき画面 -->
-    <string name="titleTweet">Twitter つぶやく</string>
-    <string name="tweethint">Tweetを入力して下さい</string>
-    <string name="tweetBtn">Tweet</string>
-    <string name="moveTimelineBtn">タイムライン</string>
+    <string name="titleTweet">Twitter ツイート</string>
+    <string name="tweethint">ツイートを入力して下さい</string>
+    <string name="tweetBtn">ツイート</string>
+    <string name="moveTimelineBtn">タイムラインへ</string>
     <!-- つぶやき一覧画面 -->
-    <string name="titleTimeline">Twitter タイムライン</string>
+    <string name="titleTimeline">Twitter 一覧</string>
+    <string name="moveTweetBtn">ツイート</string>
     
 </resources>

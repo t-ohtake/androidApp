@@ -5,12 +5,14 @@
     android:orientation="vertical"
     android:background="@drawable/appback" >
 
+    <!-- メッセージ表示 -->
     <TextView
         android:id="@+id/addTweetMsg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="" />
-
+    
+	<!-- つぶやき入力テキストボックス -->
     <EditText
         android:id="@+id/tweetText"
         android:layout_width="match_parent"
@@ -20,6 +22,7 @@
         android:hint="@string/tweethint"
         android:width="200.0px" />
 
+    <!-- つぶやくボタン -->
     <Button
         android:id="@+id/tweetBtn"
         android:layout_width="match_parent"
@@ -27,6 +30,7 @@
         android:background="@drawable/image_stateful"
         android:text="@string/tweetBtn" />
 
+    <!-- タイムライン遷移ボタン -->
     <Button
         android:id="@+id/moveTimelineBtn"
         style="?android:attr/buttonStyleSmall"
