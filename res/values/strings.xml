@@ -3,7 +3,7 @@
     <!-- 共通 -->
     <string name="app_name">s2softAndroidApp</string>
     <!-- 認証画面 -->
-	<string name="Attestation">Twitter　認証</string>
+	<string name="Attestation">Twitter</string>
 	<string name="AttestationBtn">認証</string>
 	<!-- 認証後画面 -->
 	<string name="titleAfterAttestation">Twitter</string>
