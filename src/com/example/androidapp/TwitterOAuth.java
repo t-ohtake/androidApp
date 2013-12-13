@@ -15,6 +15,8 @@ import android.widget.Button;
 
 /**
  *　Oauth認証でアプリ連携を行うアプリ
+ * コールバック先にはcom.example.androidapp://TwitterOauthを指定
+ * ⇒.CallBackActivityに遷移する
  * @author t-ohtake
  *
  */
@@ -23,6 +25,10 @@ public class TwitterOauth extends Activity
 	//アプリの認証オブジェクト、Oauth認証オブジェクト作成
 	public static RequestToken _req = null;
 	public static OAuthAuthorization _oauth = null;
+	
+	//トークン変数
+	private String _accessToken 		= null;
+	private String _accessTokenSecret 	= null;
 	
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -46,7 +52,7 @@ public class TwitterOauth extends Activity
      * ボタン押下時に呼出し
      */
     private void executeOauth()
-    {
+    {        
     	//Twitetr4jの設定を読み込む
     	Configuration conf = ConfigurationContext.getInstance();
     	_oauth = new OAuthAuthorization(conf);

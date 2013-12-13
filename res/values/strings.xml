@@ -14,7 +14,7 @@
     <string name="tweetBtn">ツイート</string>
     <string name="moveTimelineBtn">タイムライン</string>
     <!-- つぶやき一覧画面 -->
-    <string name="titleTimeline">Twitter 一覧</string>
+    <string name="titleTimeline">Twitter タイムライン</string>
      <string name="updateTimeLineBtn">更新</string>
     <string name="moveTweetBtn">ツイート</string>
     

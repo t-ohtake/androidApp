@@ -1,5 +1,8 @@
 package com.example.androidapp;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import twitter4j.ResponseList;
 import twitter4j.Status;
 import twitter4j.Twitter;
@@ -17,6 +20,7 @@ import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
 
@@ -33,9 +37,6 @@ public class TimeLineActivity extends Activity
 	//トークン変数
 	private String _accessToken 		= null;
 	private String _accessTokenSecret 	= null;
-	
-	//ListView表示用
-	static ArrayAdapter<String> adapter;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState)
@@ -92,9 +93,10 @@ public class TimeLineActivity extends Activity
 		//AccessTokenオブジェクトの設定
 		AccessToken at = new AccessToken(_accessToken, _accessTokenSecret);
 		tw.setOAuthAccessToken(at);
-
-		// リストビューに表示するためのデータを設定
-        ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1);
+		
+        //リストビューに表示するためのデータを設定
+        ArrayList<HashMap<String,String>> data = new ArrayList<HashMap<String,String>>();
+        
 		try
 		{
 			//タイムラインの取得
@@ -106,8 +108,11 @@ public class TimeLineActivity extends Activity
 				String userId = status.getUser().getScreenName();
 				String tweet = status.getText();
 				
-				//
-				adapter.add(userId + "\n" + tweet);
+				//test
+				HashMap<String,String> map = new HashMap<String,String>();
+				map.put("userId", userId);
+				map.put("tweet", tweet);
+				data.add(map);
 			}
 		}
 		catch (TwitterException e)
@@ -122,9 +127,11 @@ public class TimeLineActivity extends Activity
 		    }
 		}
 		
+		SimpleAdapter sa = new SimpleAdapter(this, data,R.layout.timelinrow, new String[]{"userId","tweet"},new int[]{R.id.userId,R.id.tweet});
+
         //ListViewに値を設定
         ListView  listView = (ListView)findViewById(R.id.TimelineListView);
-        listView.setAdapter(adapter);
+        listView.setAdapter(sa);
     }
     
 	/**
