@@ -84,29 +84,29 @@ public class GameMainView extends View
                 }
                 canvas.drawBitmap(bmpPeshanko, p.x, p.y, null);
             }
-            else {
+            else
+            {
                 p.move();
                 canvas.drawBitmap(bmpEdamame, p.x, p.y, null);
             }
             i++;
         }
         
-        // 新しいターゲットを作るかどうか。ターゲットが50より少ない場合にはスピードアップ
+        // 新しいターゲットを作るかどうか。//ターゲットが50より少ない場合にはスピードアップ
         if (frame % 20 == 0)
         {
             if (monsters.size() < 50)
             {
                 monsters.add(new Monster(this, monsterSpeed));
-                monsterSpeed += 1;
+                monsters.add(new Monster(this, monsterSpeed));
+                //monsterSpeed += 1;
             }
         }
         
         //画面上部のテキスト描画
         Paint paint = new Paint();
         paint.setColor(Color.BLUE);
-        String msg = "つぶした豆:" + score +
-            "/豆増殖数:" + (monsters.size()) +
-            "/Frame:" + (frame++);
+        String msg = "つぶした豆:" + score + "/豆増殖数:" + (monsters.size()) + "/Frame:" + (frame++);
         canvas.drawText(msg, 2, 30, paint);
     }
     
