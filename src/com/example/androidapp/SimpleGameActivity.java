@@ -2,6 +2,8 @@ package com.example.androidapp;
 
 import java.util.Timer;
 import java.util.TimerTask;
+
+import com.example.androidapp.view.RedrawView;
 import com.example.androidapp.view.TouchView;
 import com.example.androidapp.view.MyCircleView;
 
@@ -31,8 +33,11 @@ public class SimpleGameActivity extends Activity
     	super.onCreate(savedInstanceState);
         // View クラスのインスタンスを生成する
     	touchview = new TouchView(getApplication());
+    	//RedrawView redrawView = new RedrawView(getApplication());
+    	
         // View に設定する
-        setContentView(touchview);
+    	setContentView(touchview);
+        //setContentView(redrawView);
     }
     
     /**

@@ -7,8 +7,9 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
+
 /**
- * Viewクラスは、ゲーム画面や独自にカスタマイズされた画面を作成する場合に利用
+ * （テスト用のクラス）Viewクラスは、ゲーム画面や独自にカスタマイズされた画面を作成する場合に利用
  * @author t-ohtake
  *
  */
