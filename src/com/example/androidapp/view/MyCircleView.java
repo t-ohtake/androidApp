@@ -7,15 +7,27 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.view.View;
 
+/**
+ * Viewクラスは、ゲーム画面や独自にカスタマイズされた画面を作成する場合に利用
+ * @author t-ohtake
+ *
+ */
 @SuppressLint("DrawAllocation")
 public class MyCircleView extends View
 {
+    
+    int count=10;
+    
 	// View の初期化
     public MyCircleView(Context context)
     {
         super(context);
         setFocusable(true);
     }
+
+    public int displayWidth;
+    public int displayHeight;
+    
     // 実際に描画を行うメソッド
     protected void onDraw(Canvas canvas)
     {
@@ -30,7 +42,16 @@ public class MyCircleView extends View
         
         // 円を描画する
         paint.setStyle(Paint.Style.FILL);
-        paint.setColor(Color.BLUE);
-        canvas.drawCircle(150, 150, 100, paint);
+        paint.setColor(Color.BLACK);
+        
+        canvas.drawCircle(150, 200, count, paint);
+        count = count + 1;
+    }
+    
+    /** 画面サイズが変更されたときに呼び出されるメソッド */
+    protected void onSizeChanged(int w, int h, int oldw, int oldh)
+    {
+        displayWidth  = w;
+        displayHeight = h;
     }
 }

@@ -20,7 +20,7 @@
      <string name="moveSimplegameBtn">シンプルゲームへ</string>
     
     <!-- シンプルゲーム画面 -->
-    <string name="simplegameTitle">シンプルゲーム</string>
+    <string name="simplegameTitle">図の描写</string>
     <string name="simplegameMsg">画面正常表示確認</string>
     
 </resources>

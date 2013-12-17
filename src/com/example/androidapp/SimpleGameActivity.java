@@ -1,13 +1,12 @@
 package com.example.androidapp;
 
+import java.util.Timer;
+import java.util.TimerTask;
+import com.example.androidapp.view.TouchView;
 import com.example.androidapp.view.MyCircleView;
 
 import android.app.Activity;
-import android.graphics.PixelFormat;
 import android.os.Bundle;
-import android.view.Display;
-import android.view.Window;
-import android.view.WindowManager;
 
 
 /**
@@ -17,14 +16,46 @@ import android.view.WindowManager;
  */
 public class SimpleGameActivity extends Activity
 {
+	/** 画面描画用 View */
+    MyCircleView myCircleview;
+    
+    /** タッチで画面描画用 View */
+    TouchView touchview;
+    
+    /** Timer 処理用のハンドラ */
+    android.os.Handler handler = new android.os.Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
     	super.onCreate(savedInstanceState);
         // View クラスのインスタンスを生成する
-        MyCircleView view = new MyCircleView(getApplication());
+    	touchview = new TouchView(getApplication());
         // View に設定する
-        setContentView(view);
+        setContentView(touchview);
+    }
+    
+    /**
+     * 円を描くメソッド(未使用)
+     */
+    private void paintDisplay()
+    {
+        //Timer の設定をする
+        Timer timer = new Timer(false);
+        timer.schedule(new TimerTask()
+        {
+            public void run()
+            {
+                handler.post(new Runnable()
+                {
+                    public void run()
+                    {
+                    	myCircleview.invalidate();
+                    }
+                });
+            }
+        },0, 1);
     }
 }
+
+
