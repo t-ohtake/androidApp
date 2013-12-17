@@ -76,6 +76,18 @@ public class TimeLineActivity extends Activity
 				moveTweet();
 			}
 		});
+        
+        //【シンプルゲームボタン押下時の動作】
+        Button moveSimplegameBtn = (Button)findViewById(R.id.moveSimplegameBtn);
+        moveSimplegameBtn.setOnClickListener(new OnClickListener()
+        {
+			@Override
+			public void onClick(View v)
+			{
+				//TweetActivetyへの遷移メソッド呼出し
+				moveSimplegame();
+			}
+		});
 
     }
     
@@ -143,6 +155,18 @@ public class TimeLineActivity extends Activity
 	{
         //TimeLineActivityへ遷移
 		Intent intent = new Intent(TimeLineActivity.this, TweetActivity.class);
+        startActivity(intent);
+	}
+	
+	/**
+	 *===========================================
+	 * TimeLineActivityへ遷移処理
+	 * ===========================================
+	 */
+	public void moveSimplegame()
+	{
+        //TimeLineActivityへ遷移
+		Intent intent = new Intent(TimeLineActivity.this, SimpleGameActivity.class);
         startActivity(intent);
 	}
 

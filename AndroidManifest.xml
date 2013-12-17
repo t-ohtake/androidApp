@@ -33,5 +33,9 @@
         <activity android:name=".TimeLineActivity" android:label="@string/titleTimeline">
 		</activity>
 		
+       	<!--　シンプルゲーム画面 -->
+        <activity android:name=".SimpleGameActivity" android:label="@string/simplegameTitle">
+		</activity>
+		
     </application>
 </manifest>

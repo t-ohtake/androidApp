@@ -27,5 +27,14 @@
         android:layout_height="30dp"
         android:background="@drawable/image_stateful"
         android:text="@string/moveTweetBtn" />
+      
+      <!-- シンプルゲーム画面へ遷移ボタン -->
+      <Button
+        android:id="@+id/moveSimplegameBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@drawable/image_stateful"
+        android:text="@string/moveSimplegameBtn" />
 
 </LinearLayout>

@@ -13,9 +13,14 @@
     <string name="tweethint">ツイートを入力して下さい</string>
     <string name="tweetBtn">ツイート</string>
     <string name="moveTimelineBtn">タイムライン</string>
-    <!-- つぶやき一覧画面 -->
+    <!-- タイムライン画面 -->
     <string name="titleTimeline">Twitter タイムライン</string>
      <string name="updateTimeLineBtn">更新</string>
     <string name="moveTweetBtn">ツイート</string>
+     <string name="moveSimplegameBtn">シンプルゲームへ</string>
+    
+    <!-- シンプルゲーム画面 -->
+    <string name="simplegameTitle">シンプルゲーム</string>
+    <string name="simplegameMsg">画面正常表示確認</string>
     
 </resources>
