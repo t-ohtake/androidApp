@@ -30,7 +30,7 @@ public class GameMainView extends View
     public int dispY = 640;
     private int frame = 0;
     private int score = 0;
-    private int monsterSpeed = 2;
+    private int monsterSpeed = 10;
     private ArrayList<Monster> monsters;
     
     //画像ビットマップ
@@ -97,7 +97,6 @@ public class GameMainView extends View
         {
             if (monsters.size() < 50)
             {
-                monsters.add(new Monster(this, monsterSpeed));
                 monsters.add(new Monster(this, monsterSpeed));
                 //monsterSpeed += 1;
             }
