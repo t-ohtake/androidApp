@@ -29,13 +29,15 @@ public class TouchView extends View
         pointsList = new ArrayList<Point>();
     }
     
-    
     /** タッチしたポイントをArrayListに保存する */
     public boolean onTouchEvent(MotionEvent event)
     {
+    	//タッチした座標取得
         Point p = new Point();
         p.x 	= (int)event.getX();
         p.y 	= (int)event.getY();
+        
+        //タッチした座標を格納
         pointsList.add(p);
         this.invalidate();
         return true;
@@ -52,12 +54,12 @@ public class TouchView extends View
         //FILL				=円の内部を塗りつぶす
         //STROKE			=線で円を描く
         //FILL_AND_STROKE	=線で円を描き, 内部を塗りつぶす
-        paint.setStyle(Paint.Style.STROKE);
+        paint.setStyle(Paint.Style.FILL);
         
         for (int i = 0; i < pointsList.size(); i++)
         {
             Point p = pointsList.get(i);
-            canvas.drawCircle(p.x, p.y, 10, paint);
+            canvas.drawCircle(p.x, p.y, 3, paint);
         }
     }
 }

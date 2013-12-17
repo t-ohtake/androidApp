@@ -34,7 +34,7 @@
 		</activity>
 		
        	<!--　シンプルゲーム画面 -->
-        <activity android:name=".SimpleGameActivity" android:label="@string/simplegameTitle">
+		<activity android:name=".SimpleGameActivity" android:label="@string/simplegameTitle">
 		</activity>
 		
     </application>

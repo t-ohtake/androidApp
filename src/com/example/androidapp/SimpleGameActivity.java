@@ -3,6 +3,7 @@ package com.example.androidapp;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import com.example.androidapp.view.GameMainView;
 import com.example.androidapp.view.RedrawView;
 import com.example.androidapp.view.TouchView;
 import com.example.androidapp.view.MyCircleView;
@@ -22,7 +23,10 @@ public class SimpleGameActivity extends Activity
     MyCircleView myCircleview;
     
     /** タッチで画面描画用 View */
-    TouchView touchview;
+    //TouchView touchview;
+    GameMainView gameMainView;
+    
+    /** ゲーム画面描画用 View */
     
     /** Timer 処理用のハンドラ */
     android.os.Handler handler = new android.os.Handler();
@@ -32,17 +36,17 @@ public class SimpleGameActivity extends Activity
     {
     	super.onCreate(savedInstanceState);
         // View クラスのインスタンスを生成する
-    	touchview = new TouchView(getApplication());
+    	gameMainView = new GameMainView(getApplication());
     	//RedrawView redrawView = new RedrawView(getApplication());
     	
         // View に設定する
-    	setContentView(touchview);
+    	setContentView(gameMainView);
         //setContentView(redrawView);
     }
     
     /**
      * 円を描くメソッド(未使用)
-     */
+     
     private void paintDisplay()
     {
         //Timer の設定をする
@@ -61,6 +65,7 @@ public class SimpleGameActivity extends Activity
             }
         },0, 1);
     }
+    */
 }
 
 

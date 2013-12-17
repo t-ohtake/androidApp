@@ -18,12 +18,14 @@ public final class R {
         public static final int app_lan=0x7f020000;
         public static final int app_lan2=0x7f020001;
         public static final int appback=0x7f020002;
-        public static final int icon=0x7f020003;
-        public static final int image_stateful=0x7f020004;
-        public static final int siro=0x7f020005;
-        public static final int tableback=0x7f020006;
-        public static final int tablebackbuttom=0x7f020007;
-        public static final int tw=0x7f020008;
+        public static final int edamame=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int image_stateful=0x7f020005;
+        public static final int peshanko=0x7f020006;
+        public static final int siro=0x7f020007;
+        public static final int tableback=0x7f020008;
+        public static final int tablebackbuttom=0x7f020009;
+        public static final int tw=0x7f02000a;
     }
     public static final class id {
         public static final int TimelineListView=0x7f060002;
