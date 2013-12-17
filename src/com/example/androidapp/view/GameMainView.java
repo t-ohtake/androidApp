@@ -30,7 +30,7 @@ public class GameMainView extends View
     public int dispY = 640;
     private int frame = 0;
     private int score = 0;
-    private int monsterSpeed = 4;
+    private int monsterSpeed = 2;
     private ArrayList<Monster> monsters;
     
     //画像ビットマップ
@@ -97,15 +97,15 @@ public class GameMainView extends View
             if (monsters.size() < 50)
             {
                 monsters.add(new Monster(this, monsterSpeed));
-                //monsterSpeed += 2;
+                monsterSpeed += 1;
             }
         }
         
         //画面上部のテキスト描画
         Paint paint = new Paint();
         paint.setColor(Color.BLUE);
-        String msg = "Score:" + score +
-            "/monster:" + (monsters.size()) +
+        String msg = "つぶした豆:" + score +
+            "/豆増殖数:" + (monsters.size()) +
             "/Frame:" + (frame++);
         canvas.drawText(msg, 2, 30, paint);
     }
