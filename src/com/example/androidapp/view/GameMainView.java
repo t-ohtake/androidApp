@@ -77,7 +77,7 @@ public class GameMainView extends View
             if (p.anime > 0)
             {
                 p.anime++;
-                if (p.anime > 200)
+                if (p.anime > 3)
                 {
                     monsters.remove(i);
                     continue;

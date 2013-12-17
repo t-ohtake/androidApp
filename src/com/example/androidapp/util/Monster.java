@@ -46,10 +46,10 @@ public class Monster
     {
     	boolean flagX = false;
     	boolean flagY = false;
-    	int beforX = x + 20;
-    	int afterX = x - 20;
-    	int beforY = y + 20;
-    	int afterY = y - 20;
+    	int beforX = x + 15;
+    	int afterX = x - 15;
+    	int beforY = y + 15;
+    	int afterY = y - 15;
     	
     	if(tx < beforX && tx > afterX)
     	{
